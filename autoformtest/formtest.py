@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, flash, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from flask_wtf import FlaskForm
@@ -40,6 +40,11 @@ def addForm():
   form = FlowerForm()
   print(request.form) #test
   return render_template("new.html", form=form)
+
+@app.route("/msg")
+def msgPage():
+  flash("Testmessage")
+  return redirect("/")
 
 app.run(debug=True)
 

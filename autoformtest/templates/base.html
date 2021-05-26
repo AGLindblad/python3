@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <nav>
+      <a href="/">Frontpage</a>
+      <a href="/msg">Messages</a>
+    </nav>
+    {% if get_flashed_messages() %}
+      {% for message in get_flashed_messages() %}
+        {{ message }} <br>
+      {% endfor %}
+    {% endif %}
     <h2> Database </h2>
     <article>
     {% block content %}
