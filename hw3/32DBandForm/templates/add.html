@@ -1,0 +1,21 @@
+{% set title = "Add a movie" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+<p> Add an oldtimey movie </p>
+
+<form method=POST>
+{% for field in form %}
+<p>
+{% if not field.flags.hidden %}
+  {{ field.label }}
+{% endif %}
+  {{ field }}
+</p>
+{% endfor %}
+<input type=submit>
+</form>
+
+{% endblock content %}
+

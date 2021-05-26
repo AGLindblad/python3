@@ -1,0 +1,23 @@
+{% if not title %}
+  {% set title= "Database + Form" %}
+{% endif %}
+
+<!Doctype html>
+<html lang=en>
+  <head>
+    <title> {{ title }} </title>
+    <meta charset="utf-8">
+    <meta name = viewport content "width=device-width; initial-scale=1">
+  </head>
+
+  <body>
+    <nav>
+      <a href="/">Start</a>
+      <a href="/add">Add movie</a>
+    </nav>
+    <h2> {{title}} </h2>
+    {% block content %}
+    <p> Hello hello </p>
+    {% endblock content %}
+  </body>
+</html>

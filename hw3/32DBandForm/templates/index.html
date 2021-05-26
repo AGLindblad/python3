@@ -1,0 +1,13 @@
+{% set title = "DB & Form" %}
+
+{% extends "base.html" %}
+
+{% block content %}
+<p> Noteworthy early movies </p>
+
+{% for movie in movies %}
+<p> {{movie.director}}: {{movie.name}} </p>
+{% endfor %}
+
+{% endblock content %}
+
