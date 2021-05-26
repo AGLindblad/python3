@@ -1,0 +1,30 @@
+{% if not title %}
+  {% set title= "Flashx2" %}
+{% endif %}
+
+<!Doctype html>
+<html lang=en>
+  <head>
+    <title> {{ title }} </title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+    <h2> {{title}} </h2>
+    
+  <nav>
+    <a href="/">Frontpage</a>
+    <a href="/message1">Messages</a>
+    <a href="/message2">Even more messages</a>
+  </nav>
+  {% if get_flashed_messages() %}
+    {% for message in get_flashed_messages() %}
+      {{ message }} <br>
+    {% endfor %}
+  {% endif %}
+
+  {% block content %}
+    <p> Hello hello </p>
+    {% endblock content %}
+  </body>
+</html>
