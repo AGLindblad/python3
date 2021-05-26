@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <p> FlowerDb </p>
+
+  {% for flower in flowers %}
+    <p> {{ flower.type }}: {{flower.name}} </p>
+  {% endfor %}
+
+{% endblock content %}
+
